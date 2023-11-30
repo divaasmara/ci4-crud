@@ -1,0 +1,197 @@
+ERROR - 2023-11-30 13:01:17 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_quiz2`.`myticket`, CONSTRAINT `myticket_ibfk_1` FOREIGN KEY (`f_id`) REFERENCES `film` (`f_id`)) in C:\xampp\htdocs\voughtcinema5\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\voughtcinema5\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `fi...', 0)
+#1 C:\xampp\htdocs\voughtcinema5\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `fi...')
+#2 C:\xampp\htdocs\voughtcinema5\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `fi...')
+#3 C:\xampp\htdocs\voughtcinema5\system\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `fi...', Array, false)
+#4 C:\xampp\htdocs\voughtcinema5\system\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\voughtcinema5\system\BaseModel.php(1080): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\xampp\htdocs\voughtcinema5\app\Controllers\UserCrud.php(70): CodeIgniter\BaseModel->delete(Array)
+#7 C:\xampp\htdocs\voughtcinema5\system\CodeIgniter.php(919): App\Controllers\UserCrud->delete('5')
+#8 C:\xampp\htdocs\voughtcinema5\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserCrud))
+#9 C:\xampp\htdocs\voughtcinema5\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\voughtcinema5\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\voughtcinema5\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2023-11-30 13:01:17 --> Cannot delete or update a parent row: a foreign key constraint fails (`db_quiz2`.`myticket`, CONSTRAINT `myticket_ibfk_1` FOREIGN KEY (`f_id`) REFERENCES `film` (`f_id`))
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `film`
+WHERE `f_id` = :f_id:
+AND `f_id` IN :f_id.1:', [...], false)
+ 2 SYSTEMPATH\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1080): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH\Controllers\UserCrud.php(70): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserCrud->delete('5')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserCrud))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\voughtcinema5\\public\\index.php')
+CRITICAL - 2023-11-30 23:33:18 --> Undefined array key "f_id"
+in APPPATH\Views\user_view.php on line 56.
+ 1 APPPATH\Views\user_view.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "f_id"', 'E:\\CODING\\Laragon\\www\\crud\\app\\Views\\user_view.php', 56)
+ 2 SYSTEMPATH\View\View.php(226): include('E:\\CODING\\Laragon\\www\\crud\\app\\Views\\user_view.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('user_view', [], true)
+ 5 APPPATH\Controllers\UserCrud.php(13): view('user_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserCrud->admin()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserCrud))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\CODING\\Laragon\\www\\crud\\public\\index.php')
+ERROR - 2023-11-30 23:39:20 --> mysqli_sql_exception: Column 'm_nama' cannot be null in E:\CODING\Laragon\www\crud\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\CODING\Laragon\www\crud\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ma...', 0)
+#1 E:\CODING\Laragon\www\crud\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ma...')
+#2 E:\CODING\Laragon\www\crud\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ma...')
+#3 E:\CODING\Laragon\www\crud\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ma...', Array, false)
+#4 E:\CODING\Laragon\www\crud\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\CODING\Laragon\www\crud\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 E:\CODING\Laragon\www\crud\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\CODING\Laragon\www\crud\app\Controllers\UserCrud.php(37): CodeIgniter\Model->insert(Array)
+#8 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(919): App\Controllers\UserCrud->store()
+#9 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserCrud))
+#10 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\CODING\Laragon\www\crud\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\CODING\Laragon\www\crud\system\Commands\Server\rewrite.php(47): require_once('E:\\CODING\\Larag...')
+#13 {main}
+CRITICAL - 2023-11-30 23:39:20 --> Column 'm_nama' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `mahasiswa` (`m_nama`, `m_nrp`, `m_email`) VALUES (:m_nama:, :m_nrp:, :m_email:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\UserCrud.php(37): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserCrud->store()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserCrud))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\CODING\\Laragon\\www\\crud\\public\\index.php')
+ERROR - 2023-11-30 23:40:06 --> mysqli_sql_exception: Column 'm_nama' cannot be null in E:\CODING\Laragon\www\crud\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\CODING\Laragon\www\crud\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ma...', 0)
+#1 E:\CODING\Laragon\www\crud\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ma...')
+#2 E:\CODING\Laragon\www\crud\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ma...')
+#3 E:\CODING\Laragon\www\crud\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ma...', Array, false)
+#4 E:\CODING\Laragon\www\crud\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\CODING\Laragon\www\crud\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 E:\CODING\Laragon\www\crud\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\CODING\Laragon\www\crud\app\Controllers\UserCrud.php(37): CodeIgniter\Model->insert(Array)
+#8 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(919): App\Controllers\UserCrud->store()
+#9 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserCrud))
+#10 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\CODING\Laragon\www\crud\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\CODING\Laragon\www\crud\system\Commands\Server\rewrite.php(47): require_once('E:\\CODING\\Larag...')
+#13 {main}
+CRITICAL - 2023-11-30 23:40:06 --> Column 'm_nama' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `mahasiswa` (`m_nama`, `m_nrp`, `m_email`) VALUES (:m_nama:, :m_nrp:, :m_email:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\UserCrud.php(37): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserCrud->store()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserCrud))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\CODING\\Laragon\\www\\crud\\public\\index.php')
+ERROR - 2023-11-30 23:43:16 --> mysqli_sql_exception: Column 'm_nama' cannot be null in E:\CODING\Laragon\www\crud\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\CODING\Laragon\www\crud\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ma...', 0)
+#1 E:\CODING\Laragon\www\crud\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ma...')
+#2 E:\CODING\Laragon\www\crud\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ma...')
+#3 E:\CODING\Laragon\www\crud\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ma...', Array, false)
+#4 E:\CODING\Laragon\www\crud\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\CODING\Laragon\www\crud\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 E:\CODING\Laragon\www\crud\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\CODING\Laragon\www\crud\app\Controllers\UserCrud.php(37): CodeIgniter\Model->insert(Array)
+#8 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(919): App\Controllers\UserCrud->store()
+#9 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserCrud))
+#10 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\CODING\Laragon\www\crud\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\CODING\Laragon\www\crud\system\Commands\Server\rewrite.php(47): require_once('E:\\CODING\\Larag...')
+#13 {main}
+CRITICAL - 2023-11-30 23:43:16 --> Column 'm_nama' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `mahasiswa` (`m_nama`, `m_nrp`, `m_email`) VALUES (:m_nama:, :m_nrp:, :m_email:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\UserCrud.php(37): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserCrud->store()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserCrud))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\CODING\\Laragon\\www\\crud\\public\\index.php')
+ERROR - 2023-11-30 23:43:38 --> mysqli_sql_exception: Column 'm_nrp' cannot be null in E:\CODING\Laragon\www\crud\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\CODING\Laragon\www\crud\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ma...', 0)
+#1 E:\CODING\Laragon\www\crud\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ma...')
+#2 E:\CODING\Laragon\www\crud\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ma...')
+#3 E:\CODING\Laragon\www\crud\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ma...', Array, false)
+#4 E:\CODING\Laragon\www\crud\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\CODING\Laragon\www\crud\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 E:\CODING\Laragon\www\crud\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\CODING\Laragon\www\crud\app\Controllers\UserCrud.php(37): CodeIgniter\Model->insert(Array)
+#8 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(919): App\Controllers\UserCrud->store()
+#9 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserCrud))
+#10 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\CODING\Laragon\www\crud\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\CODING\Laragon\www\crud\system\Commands\Server\rewrite.php(47): require_once('E:\\CODING\\Larag...')
+#13 {main}
+CRITICAL - 2023-11-30 23:43:38 --> Column 'm_nrp' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `mahasiswa` (`m_nama`, `m_nrp`, `m_email`) VALUES (:m_nama:, :m_nrp:, :m_email:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\UserCrud.php(37): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserCrud->store()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserCrud))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\CODING\\Laragon\\www\\crud\\public\\index.php')
+ERROR - 2023-11-30 23:57:28 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'crud_ci4' in E:\CODING\Laragon\www\crud\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 E:\CODING\Laragon\www\crud\system\Database\MySQLi\Connection.php(185): mysqli->real_connect(NULL, 'root', '', 'crud_ci4', NULL, '/Applications/X...', 0)
+#1 E:\CODING\Laragon\www\crud\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\CODING\Laragon\www\crud\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\CODING\Laragon\www\crud\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\CODING\Laragon\www\crud\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\CODING\Laragon\www\crud\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\CODING\Laragon\www\crud\app\Controllers\UserCrud.php(12): CodeIgniter\BaseModel->findAll()
+#7 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(919): App\Controllers\UserCrud->admin()
+#8 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserCrud))
+#9 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\CODING\Laragon\www\crud\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 E:\CODING\Laragon\www\crud\system\Commands\Server\rewrite.php(47): require_once('E:\\CODING\\Larag...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'crud_ci4' in E:\CODING\Laragon\www\crud\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 E:\CODING\Laragon\www\crud\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\CODING\Laragon\www\crud\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\CODING\Laragon\www\crud\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\CODING\Laragon\www\crud\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\CODING\Laragon\www\crud\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 E:\CODING\Laragon\www\crud\app\Controllers\UserCrud.php(12): CodeIgniter\BaseModel->findAll()
+#6 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(919): App\Controllers\UserCrud->admin()
+#7 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserCrud))
+#8 E:\CODING\Laragon\www\crud\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\CODING\Laragon\www\crud\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 E:\CODING\Laragon\www\crud\system\Commands\Server\rewrite.php(47): require_once('E:\\CODING\\Larag...')
+#11 {main}
+CRITICAL - 2023-11-30 23:57:29 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'crud_ci4'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `mahasiswa`
+ORDER BY `m_id` ASC', [], false)
+ 3 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\UserCrud.php(12): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserCrud->admin()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserCrud))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\CODING\\Laragon\\www\\crud\\public\\index.php')
